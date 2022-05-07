@@ -30,33 +30,6 @@ async def main():
             team=ConstantTeambuilder(t),
             max_concurrent_battles=10,
         ))
-    players = [cooper.cooper_player, RandomPlayer(
-        battle_format="gen8nationaldexag",
-        team=ConstantTeambuilder(TEAM_1),
-        max_concurrent_battles=10,
-    ), RandomPlayer(
-        battle_format="gen8nationaldexag",
-        team=ConstantTeambuilder(TEAM_2),
-        max_concurrent_battles=10,
-    ), RandomPlayer(
-        battle_format="gen8nationaldexag",
-        team=ConstantTeambuilder(TEAM_3),
-        max_concurrent_battles=10,
-    ),
-        HitHardOrSwitchPlayer(
-        battle_format="gen8nationaldexag",
-        team=ConstantTeambuilder(TEAM_1),
-        max_concurrent_battles=10,
-    ), HitHardOrSwitchPlayer(
-        battle_format="gen8nationaldexag",
-        team=ConstantTeambuilder(TEAM_2),
-        max_concurrent_battles=10,
-    ), HitHardOrSwitchPlayer(
-        battle_format="gen8nationaldexag",
-        team=ConstantTeambuilder(TEAM_3),
-        max_concurrent_battles=10,
-    ),
-    ]
 
     # Evaluate all players with provided utility functions. Copied from docs.
     cross_evaluation = await cross_evaluate(players, n_challenges=100)
